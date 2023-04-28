@@ -1,7 +1,6 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28606.126
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33103.201
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET Standard", ".NET Standard", "{FEFF0146-6799-40F0-A9CF-AB5AAB6584C9}"
 EndProject
@@ -10,6 +9,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{6E8E24A4-11BF-46D5-B060-E993E070ED65}"
 	ProjectSection(SolutionItems) = preProject
 		AsyncEnumerable.nuspec = AsyncEnumerable.nuspec
+		AsyncEnumerable.pfx = AsyncEnumerable.pfx
+		.github\workflows\build.yml = .github\workflows\build.yml
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection

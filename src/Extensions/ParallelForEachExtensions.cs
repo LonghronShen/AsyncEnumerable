@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dasync.Collections.Internals;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading;
@@ -192,7 +193,7 @@ namespace Dasync.Collections
 
             var context = new ParallelForEachContext(maxDegreeOfParallelism, breakLoopOnException, gracefulBreak, cancellationToken);
 
-            Task.Run(
+            InternalTaskEx.Run(
                 async () =>
                 {
                     try
@@ -298,7 +299,7 @@ namespace Dasync.Collections
 
             var context = new ParallelForEachContext(maxDegreeOfParallelism, breakLoopOnException, gracefulBreak, cancellationToken);
 
-            Task.Run(
+            InternalTaskEx.Run(
                 async () =>
                 {
                     try

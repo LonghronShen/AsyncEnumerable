@@ -40,7 +40,7 @@ namespace Dasync.Collections.Internals
             }
             else
             {
-                return new ValueTask<bool>(Task.Run(() => _enumerator.MoveNext(), MasterCancellationToken));
+                return new ValueTask<bool>(InternalTaskEx.Run(() => _enumerator.MoveNext(), MasterCancellationToken));
             }
         }
 

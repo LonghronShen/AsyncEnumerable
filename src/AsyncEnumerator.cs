@@ -162,7 +162,7 @@ namespace Dasync.Collections
             else if (_yield != null && !_yield.IsComplete)
             {
                 var yield = _yield;
-                Task.Run(() => yield.SetCanceled()); // don't block the GC thread
+                InternalTaskEx.Run(() => yield.SetCanceled()); // don't block the GC thread
             }
 
             _enumerationTask = null;

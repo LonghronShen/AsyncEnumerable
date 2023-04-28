@@ -1,22 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6</TargetFramework>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <AssemblyName>Tests</AssemblyName>
-    <RootNamespace>Tests</RootNamespace>
-    <OutputTypeEx>exe</OutputTypeEx>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6</TargetFramework>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<RootNamespace>Tests</RootNamespace>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="NUnit" Version="3.11.0" />
-    <PackageReference Include="NUnit.Console" Version="3.9.0" />
-    <PackageReference Include="NUnit.ConsoleRunner" Version="3.9.0" />
-    <PackageReference Include="System.ValueTuple" Version="4.4.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
+		<PackageReference Include="NUnit" Version="3.13.3" />
+		<PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
+		<PackageReference Include="System.ValueTuple" Version="4.5.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\src\AsyncEnumerable.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\src\AsyncEnumerable.csproj" />
+	</ItemGroup>
 
 </Project>

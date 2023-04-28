@@ -11,15 +11,18 @@ namespace Tests
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            var builder = new DefaultTestAssemblyBuilder();
-            var runner = new NUnitTestAssemblyRunner(builder);
-            runner.Load(typeof(Program).GetTypeInfo().Assembly, settings: new Dictionary<string, object> { });
-            runner.Run(new ConsoleTestListener(), TestFilter.Empty);
-            while (runner.IsTestRunning)
-                Thread.Sleep(500);
-        }
+
+//#if !NETSTANDARD
+//        static void Main(string[] args)
+//        {
+//            var builder = new DefaultTestAssemblyBuilder();
+//            var runner = new NUnitTestAssemblyRunner(builder);
+//            runner.Load(typeof(Program).GetTypeInfo().Assembly, settings: new Dictionary<string, object> { });
+//            runner.Run(new ConsoleTestListener(), TestFilter.Empty);
+//            while (runner.IsTestRunning)
+//                Thread.Sleep(500);
+//        }
+//#endif
 
         class ConsoleTestListener : ITestListener
         {
