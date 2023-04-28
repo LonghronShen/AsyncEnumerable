@@ -10,6 +10,7 @@ on:
     
 env:
     BUILD_CONFIG: 'Release'
+    RELEASE_VERSION: "4.1.${{ github.run_attempt }}"
 
 jobs:
   build:

@@ -135,16 +135,10 @@ namespace Dasync.Collections
                 if (_cancellationToken.IsCancellationRequested)
                 {
                     _completionTcs.TrySetException(
-#if NET461 || NETSTANDARD
                         new OperationCanceledException(
                             new OperationCanceledException().Message,
                             aggregatedException,
                             _cancellationToken)
-#else
-                        new OperationCanceledException(
-                            new OperationCanceledException().Message,
-                            aggregatedException)
-#endif
                     );
                 }
                 else if (exceptions?.Count > 0)

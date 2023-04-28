@@ -5,7 +5,13 @@ using Dasync.Collections;
 
 namespace Dasync.Collections.Internals
 {
-    internal sealed class EmptyAsyncEnumerator<T> : IAsyncEnumerator, IAsyncEnumerator<T>
+    internal sealed class EmptyAsyncEnumerator
+        : EmptyAsyncEnumerator<object>
+    {
+    }
+
+    internal class EmptyAsyncEnumerator<T>
+        : IAsyncEnumerator, IAsyncEnumerator<T>
     {
         public T Current
         {

@@ -20,17 +20,17 @@ namespace Dasync.Collections
         ValueTask<bool> MoveNextAsync();
     }
 
-#if !NETSTANDARD2_1 && !NETSTANDARD2_0 && !NET461
-    /// <summary>
-    /// Supports a simple asynchronous iteration over a collection of typed items
-    /// </summary>
-    /// <typeparam name="T">The type of items in the collection</typeparam>
-    public interface IAsyncEnumerator<out T> : IAsyncEnumerator
-    {
-        /// <summary>
-        /// Gets the element in the collection at the current position of the enumerator.
-        /// </summary>
-        new T Current { get; }
-    }
-#endif
+//#if !NETSTANDARD2_1 && !NETSTANDARD2_0 && !NET461
+//    /// <summary>
+//    /// Supports a simple asynchronous iteration over a collection of typed items
+//    /// </summary>
+//    /// <typeparam name="T">The type of items in the collection</typeparam>
+//    public interface IAsyncEnumerator<out T> : IAsyncEnumerator
+//    {
+//        /// <summary>
+//        /// Gets the element in the collection at the current position of the enumerator.
+//        /// </summary>
+//        new T Current { get; }
+//    }
+//#endif
 }

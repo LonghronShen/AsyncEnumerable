@@ -9,7 +9,6 @@
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>4.0.2</Version>
 		<AssemblyOriginatorKeyFile>../AsyncEnumerable.pfx</AssemblyOriginatorKeyFile>
 		<Authors>sergiis,dasync</Authors>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -94,6 +93,9 @@ static void ConsumeNumbers()
 1.1.0: Add ParallelForEachAsync extension methods for IEnumerable&amp;lt;T&amp;gt; and IAsyncEnumerable&amp;lt;T&amp;gt; in System.Collections.Async namespace.</PackageReleaseNotes>
 		<PackageIcon>icon.png</PackageIcon>
 		<SignAssembly>False</SignAssembly>
+		<Version Condition="'$(RELEASE_VERSION)' != ''">$(RELEASE_VERSION)</Version>
+		<VersionPrefix Condition="'$(RELEASE_VERSION)' == ''">4.0.2</VersionPrefix>
+		<VersionSuffix Condition="'$(RELEASE_VERSION)' == ''">$([System.DateTime]::UtcNow.ToString(`yyyyMMdd-HHmm`))</VersionSuffix>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -111,7 +113,7 @@ static void ConsumeNumbers()
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
 	</ItemGroup>
 
-	<ItemGroup Condition=" '$(TargetFramework)' == 'net40' or '$(TargetFramework)' == 'net20' ">
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net40' or '$(TargetFramework)' == 'net20' or '$(TargetFramework)' == 'netstandard1.4' ">
 		<PackageReference Include="Theraot.Core" Version="3.2.11" />
 	</ItemGroup>
 
