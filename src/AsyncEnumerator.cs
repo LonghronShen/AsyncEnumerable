@@ -5,6 +5,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using Dasync.Collections.Internals;
 
+using TaskCompletionSource = Dasync.Collections.Internals.TaskCompletionSource;
+
 namespace Dasync.Collections
 {
     /// <summary>

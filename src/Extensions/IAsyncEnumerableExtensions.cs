@@ -967,7 +967,11 @@ namespace Dasync.Collections
 
             public bool Contains(TKey key) => _dictionary.ContainsKey(key);
 
-            public IEnumerator<IGrouping<TKey, TElement>> GetEnumerator() => _dictionary.Values.GetEnumerator();
+            public IEnumerator<IGrouping<TKey, TElement>> GetEnumerator() => _dictionary.Values
+#if NET20 || NET35 || NET40
+                .Select(x => x as IGrouping<TKey, TElement>)
+#endif
+                .GetEnumerator();
 
             IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
         }
